@@ -1,9 +1,9 @@
-data "hcp_packer_image" "Golden-Image" {
-  bucket_name     = "Golden-Image"
-  channel         = "latest"
-  cloud_provider  = "aws"
-  region          = "eu-west-1"
-}
+//data "hcp_packer_image" "Golden-Image" {
+//  bucket_name     = "Golden-Image"
+//  channel         = "latest"
+//  cloud_provider  = "aws"
+//  region          = "eu-west-1"
+//}
 data "tfe_organization" "main" {
   name = var.organization
 }
@@ -50,8 +50,9 @@ locals {
           description = "Descriptive tag for tagging purpose"
           category    = "terraform"
         },
-        "ami_id" = {
-          value       = data.hcp_packer_image.Golden-Image.cloud_image_id
+        "ami_name" = {
+          value       = "Golden-Image"
+          //value       = data.hcp_packer_image.Golden-Image.cloud_image_id
           description = "Descriptive tag for tagging purpose"
           category    = "terraform"
         },
