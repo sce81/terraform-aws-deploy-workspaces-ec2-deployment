@@ -1,5 +1,5 @@
-provider "hcp" {
-}
+//provider "hcp" {
+//}
 
 terraform {
   cloud {
@@ -14,9 +14,9 @@ terraform {
       version = "~> 0.48.0"
       source  = "hashicorp/tfe"
     }
-    hcp = {
-      source  = "hashicorp/hcp"
-      version = "~> 0.72.1"
-    }
+//    hcp = {
+//      source  = "hashicorp/hcp"
+//      version = "~> 0.72.1"
+//    }
   }
 }
