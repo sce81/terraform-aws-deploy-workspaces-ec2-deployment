@@ -1,9 +1,3 @@
-//data "hcp_packer_image" "Golden-Image" {
-//  bucket_name     = "Golden-Image"
-//  channel         = "latest"
-//  cloud_provider  = "aws"
-//  region          = "eu-west-1"
-//}
 data "tfe_organization" "main" {
   name = var.organization
 }
@@ -26,17 +20,17 @@ locals {
     ec2_vars = {
       "pki_demo" = {
         "name" = {
-          value       = "ec2_pki"
+          value       = "ec2-pki"
           description = "S3 Bucket for TFCE to TFC Migration Demos"
           category    = "terraform"
         },
         "env" = {
-          value       = "vault_demo"
+          value       = "vault-demo"
           description = "Descriptive tag for tagging purpose"
           category    = "terraform"
         },
         "vpc_name" = {
-          value       = "public"
+          value       = "demo-public-vpc"
           description = "S3 Bucket for TFCE to TFC Migration Demos"
           category    = "terraform"
         },
@@ -52,17 +46,10 @@ locals {
         },
         "ami_name" = {
           value       = "Golden-Image"
-          //value       = data.hcp_packer_image.Golden-Image.cloud_image_id
-          description = "Descriptive tag for tagging purpose"
-          category    = "terraform"
-        },
-        "key_name" = {
-          value       = "AWS S3 Bucket for storing Terraform CE Statefiles"
-          description = "Descriptive tag for tagging purpose"
+          description = "Descriptive tag for tagging purpose. Pulls from HCP Packer"
           category    = "terraform"
         },
       },
-
     }
   }
 }
