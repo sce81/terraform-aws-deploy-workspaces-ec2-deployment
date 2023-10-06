@@ -6,7 +6,7 @@ terraform {
     organization = "HashiCorp_TFC_Automation_Demo"
 
     workspaces {
-      name = "deploy-workspaces-deploy-ec2"
+      name = "deploy-workspaces-ec2-deployment"
     }
   }
   required_providers {
