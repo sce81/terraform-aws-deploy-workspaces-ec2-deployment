@@ -18,9 +18,9 @@ locals {
 
   workspace_vars = {
     ec2_vars = {
-      "pki_demo" = {
+      "vault_demo" = {
         "name" = {
-          value       = "ec2-pki"
+          value       = "ec2-vault"
           description = "S3 Bucket for TFCE to TFC Migration Demos"
           category    = "terraform"
         },
@@ -46,38 +46,6 @@ locals {
         },
         "ami_name" = {
           value       = "Vault"
-          description = "Descriptive tag for tagging purpose. Pulls from HCP Packer"
-          category    = "terraform"
-        },
-      },
-      "pse_demo" = {
-        "name" = {
-          value       = "ec2-pse"
-          description = "S3 Bucket for TFCE to TFC Migration Demos"
-          category    = "terraform"
-        },
-        "env" = {
-          value       = "demo"
-          description = "Descriptive tag for tagging purpose"
-          category    = "terraform"
-        },
-        "vpc_name" = {
-          value       = "demo-public-vpc"
-          description = "S3 Bucket for TFCE to TFC Migration Demos"
-          category    = "terraform"
-        },
-        "subnet_name" = {
-          value       = "private"
-          description = "Descriptive tag for tagging purpose"
-          category    = "terraform"
-        },
-        "instance_type" = {
-          value       = "t3.small"
-          description = "Descriptive tag for tagging purpose"
-          category    = "terraform"
-        },
-        "ami_name" = {
-          value       = "Golden-Image"
           description = "Descriptive tag for tagging purpose. Pulls from HCP Packer"
           category    = "terraform"
         },

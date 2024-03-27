@@ -12,7 +12,7 @@ module "TFC_Workspace_EC2_Deployments" {
   tfe_variables                 = each.value
   project_id                    = tfe_project.deploy_ec2.id
   structured_run_output_enabled = "false"
-  workspace_tags                = [each.key, "aws", "ec2", "deployment", "platform", "vault_demo"]
+  workspace_tags                = [each.key, "aws", "ec2", "deployment", "platform"]
   variable_set                  = flatten([var.variable_sets])
   sentinel_policy               = flatten(["Require-Resources-from-PMR", "Enforce-Tagging-Policy", var.sentinel_policies])
   auto_apply                    = true
