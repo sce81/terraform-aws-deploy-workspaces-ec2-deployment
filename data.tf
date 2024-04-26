@@ -18,7 +18,7 @@ locals {
 
   workspace_vars = {
     ec2_vars = {
-      "vault_demo" = {
+      "php_demo" = {
         "name" = {
           value       = "ec2-php"
           description = "S3 Bucket for TFCE to TFC Migration Demos"
