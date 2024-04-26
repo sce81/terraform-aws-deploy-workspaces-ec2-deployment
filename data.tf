@@ -20,12 +20,12 @@ locals {
     ec2_vars = {
       "vault_demo" = {
         "name" = {
-          value       = "ec2-vault"
+          value       = "ec2-php"
           description = "S3 Bucket for TFCE to TFC Migration Demos"
           category    = "terraform"
         },
         "env" = {
-          value       = "vault-demo"
+          value       = "demo"
           description = "Descriptive tag for tagging purpose"
           category    = "terraform"
         },
