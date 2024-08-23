@@ -3,20 +3,11 @@
 
 terraform {
   cloud {
-    organization = "HashiCorp_TFC_Automation_Demo"
+
+    organization = "Direct-Line-Group"
 
     workspaces {
-      name = "deploy-workspaces-ec2-deployment"
+      name = "terraform-aws-deploy-workspaces-vpc-lite-deployment"
     }
-  }
-  required_providers {
-    tfe = {
-      version = "~> 0.54.0"
-      source  = "hashicorp/tfe"
-    }
-//    hcp = {
-//      source  = "hashicorp/hcp"
-//      version = "~> 0.72.1"
-//    }
   }
 }
