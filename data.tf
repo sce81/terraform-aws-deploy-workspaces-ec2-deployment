@@ -7,7 +7,7 @@ locals {
     {
       identifier                 = "Direct-Line-Group/engprod-awscp-custom-vpc-lite"
       oauth_token_id             = var.oauth_token_id
-      branch                     = "main"
+      branch                     = "feature/awscp-5054"
     }
   ]
 
@@ -120,3 +120,30 @@ locals {
     }
   }
 }
+
+
+# locals {
+#   iam_role_instance = [
+#     {
+#       identifier                 = "Direct-Line-Group/engprod-awscp-tfc-iam"
+#       oauth_token_id             = var.oauth_token_id
+#       branch                     = "main"
+#     }
+#   ]
+
+#   workspace_vars_iam = {
+#     iam_role_vars = {
+#       "awsdlgctplatengdev" = {
+#         "role_name" = {
+#           value       = "bxis_test_role"
+#           category    = "terraform"
+#         },
+#         "account_id" = {
+#           value       = "411880710928"
+#           description = "Descriptive tag for tagging purpose"
+#           category    = "terraform"
+#         }
+#       }
+#     }
+#   }
+# }
