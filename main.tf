@@ -1,24 +1,23 @@
-resource "tfe_project" "deploy_iam_role" {
-  organization = "Direct-Line-Group"
-  name         = "deploy_iam_role"
+resource "tfe_project" "deploy_ec2" {
+  organization = "HashiCorp_TFC_Automation_Demo"
+  name         = "deploy_ec2"
 }
-
-module "TFC_Workspace_iam_role_Deployments" {
-  for_each                      = local.workspace_vars.iam_role_vars
-  source                        = "app.terraform.io/Direct-Line-Group/engprod-awscp-tfc-iam/tfe"
-  version                       = "1.0.0"
-  name                          = "awscp_workspace_iam_role_${each.key}"
+module "TFC_Workspace_EC2_Deployments" {
+  for_each                      = local.workspace_vars.ec2_vars
+  source                        = "app.terraform.io/HashiCorp_TFC_Automation_Demo/workspace-management/tfe"
+  version                       = "3.0.2"
+  name                          = "aws_workspace_ec2_${each.key}"
   organization                  = data.tfe_organization.main.name
-  vcs_repo                      = local.iam_role_instance
+  vcs_repo                      = local.ec2_instance
   tfe_variables                 = each.value
-  project_id                    = tfe_project.deploy_iam_role.id
+  project_id                    = tfe_project.deploy_ec2.id
   structured_run_output_enabled = "false"
-  workspace_tags                = [each.key, "aws", "iam_role", "deployment", "platform"]
+  workspace_tags                = [each.key, "aws", "ec2", "deployment", "platform", "ec2_deploy"]
   variable_set                  = flatten([var.variable_sets])
-  # sentinel_policy               = flatten(["Require-Resources-from-PMR", "Enforce-Tagging-Policy", var.sentinel_policies])
-  auto_apply                    = false
+  sentinel_policy               = flatten(["Require-Resources-from-PMR", "Enforce-Tagging-Policy", var.sentinel_policies])
+  auto_apply                    = true
   terraform_version             = var.terraform_version
   depends_on = [
-    tfe_project.deploy_iam_role
+    tfe_project.deploy_ec2
   ]
 }

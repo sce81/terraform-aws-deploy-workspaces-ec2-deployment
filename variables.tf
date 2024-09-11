@@ -1,5 +1,5 @@
 variable "organization" {
-  default     = "Direct-Line-Group"
+  default     = "HashiCorp_TFC_Automation_Demo"
   type        = string
   description = "workspace to deploy to"
 }
@@ -24,17 +24,11 @@ variable "sentinel_policies" {
 variable "variable_sets" {
   type        = list(string)
   description = "Workspace Variable Sets to be added to environment"
-  default     = []
+  default     = ["HCP Tokens", "HCP Vault"]
 }
 
 variable "terraform_version" {
   type        = string
-  default     = "~>1.9.0"
+  default     = "1.9.0"
   description = "Optional override for workspace Terraform Version"
-}
-
-variable "oauth_token_id" {
-  type        = string
-  default     = null
-  description = "oauth_token_id for integration"
 }
