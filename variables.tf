@@ -24,11 +24,11 @@ variable "sentinel_policies" {
 variable "variable_sets" {
   type        = list(string)
   description = "Workspace Variable Sets to be added to environment"
-  default     = ["HCP Tokens"]
+  default     = ["HCP Tokens", "HCP Vault"]
 }
 
 variable "terraform_version" {
   type        = string
-  default     = "1.6.0"
+  default     = "1.9.0"
   description = "Optional override for workspace Terraform Version"
 }

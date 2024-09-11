@@ -11,12 +11,12 @@ terraform {
   }
   required_providers {
     tfe = {
-      version = "~> 0.54.0"
+      version = "~> 0.57.1"
       source  = "hashicorp/tfe"
     }
-//    hcp = {
-//      source  = "hashicorp/hcp"
-//      version = "~> 0.72.1"
-//    }
+    //    hcp = {
+    //      source  = "hashicorp/hcp"
+    //      version = "~> 0.72.1"
+    //    }
   }
 }
