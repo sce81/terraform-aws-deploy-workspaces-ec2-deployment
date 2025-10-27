@@ -29,7 +29,7 @@ variable "variable_sets" {
 
 variable "terraform_version" {
   type        = string
-  default     = "1.9.0"
+  default     = "1.12.0"
   description = "Optional override for workspace Terraform Version"
 }
 

@@ -48,7 +48,7 @@ locals {
           category    = "terraform"
         },
         "ami_name" = {
-          value       = "Vault"
+          value       = "AWS-php"
           description = "Descriptive tag for tagging purpose. Pulls from HCP Packer"
           category    = "terraform"
         },
@@ -62,45 +62,13 @@ locals {
           description = "IAM Role for Terraform runner to assume"
           category    = "terraform"
         },
-      },
-      "postgres_demo" = {
-        "name" = {
-          value       = "ec2-postgres"
-          description = "S3 Bucket for TFCE to TFC Migration Demos"
+        "datacenter" = {
+          value       = "consul-blue-demo"
+          description = "IAM Role for Terraform runner to assume"
           category    = "terraform"
         },
-        "env" = {
-          value       = "demo"
-          description = "Descriptive tag for tagging purpose"
-          category    = "terraform"
-        },
-        "vpc_name" = {
-          value       = "demo-public-vpc"
-          description = "S3 Bucket for TFCE to TFC Migration Demos"
-          category    = "terraform"
-        },
-        "subnet_name" = {
-          value       = "private"
-          description = "Descriptive tag for tagging purpose"
-          category    = "terraform"
-        },
-        "instance_type" = {
-          value       = "t3.small"
-          description = "Descriptive tag for tagging purpose"
-          category    = "terraform"
-        },
-        "ami_name" = {
-          value       = "Postgres"
-          description = "Descriptive tag for tagging purpose. Pulls from HCP Packer"
-          category    = "terraform"
-        },
-        "VAULT_ADDR" = {
-          value       = "https://vault-cluster-public-vault-485f7257.cbb919d0.z1.hashicorp.cloud:8200"
-          description = "terraform variable for vault address"
-          category    = "terraform"
-        },
-        "cross_account_role" = {
-          value       = "public_base_infra_role"
+        "consul_cluster" = {
+          value       = "consul-blue-demo"
           description = "IAM Role for Terraform runner to assume"
           category    = "terraform"
         },
@@ -112,7 +80,7 @@ locals {
           category    = "terraform"
         },
         "env" = {
-          value       = "demo"
+          value       = "production"
           description = "Descriptive tag for tagging purpose"
           category    = "terraform"
         },
@@ -146,10 +114,20 @@ locals {
           description = "IAM Role for Terraform runner to assume"
           category    = "terraform"
         },
+        "datacenter" = {
+          value       = "consul-blue-demo"
+          description = "IAM Role for Terraform runner to assume"
+          category    = "terraform"
+        },
+        "consul_cluster" = {
+          value       = "consul-blue-demo"
+          description = "IAM Role for Terraform runner to assume"
+          category    = "terraform"
+        },
       },
-      "mongodb_demo" = {
+      "radar_demo" = {
         "name" = {
-          value       = "ec2-mongodb"
+          value       = "ec2-vault-radar"
           description = "S3 Bucket for TFCE to TFC Migration Demos"
           category    = "terraform"
         },
@@ -188,40 +166,13 @@ locals {
           description = "IAM Role for Terraform runner to assume"
           category    = "terraform"
         },
-      },
-      "vault-enterprise-hsm" = {
-        "name" = {
-          value       = "ec2-vault-hsm"
-          description = "Name of EC2 instance"
+        "datacenter" = {
+          value       = "consul-blue-demo"
+          description = "IAM Role for Terraform runner to assume"
           category    = "terraform"
         },
-        "env" = {
-          value       = "demo"
-          description = "Descriptive tag for tagging purpose"
-          category    = "terraform"
-        },
-        "vpc_name" = {
-          value       = "demo-public-vpc"
-          description = "S3 Bucket for TFCE to TFC Migration Demos"
-          category    = "terraform"
-        },
-        "subnet_name" = {
-          value       = "private"
-          description = "Descriptive tag for tagging purpose"
-          category    = "terraform"
-        },
-        "instance_type" = {
-          value       = "t3.medium"
-          description = "Descriptive tag for tagging purpose"
-          category    = "terraform"
-        },
-        "ami_name" = {
-          value       = "Vault-hsm-rhel9"
-          description = "Descriptive tag for tagging purpose. Pulls from HCP Packer"
-          category    = "terraform"
-        },
-        "cross_account_role" = {
-          value       = "development_base_infra_role"
+        "consul_cluster" = {
+          value       = "consul-blue-demo"
           description = "IAM Role for Terraform runner to assume"
           category    = "terraform"
         },
